@@ -1,63 +1,29 @@
 import React from 'react'
 import Head from 'next/head'
-import Nav from '../components/nav'
+import Card from '../components/card'
+
 import '../styles/tailwind.css'
+import data from '../data/country_data.json'
 
 const Home = () => (
   <div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
+    <div className="h-32 bgimage">
     </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
+    <div className="flex flex-wrap justify-center w-full">
+      {
+        data.filter(x => x.OC == "IN").map((el, key) => {
+          return <Card key={key} info={el}></Card>
+        })
+      }
     </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
-    </div>
-    
+    <style jsx>{`
+    .bgimage {
+      background-image: url('../images/flags/india.svg');
+         background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+    }
+    `}</style>
   </div>
 )
 
